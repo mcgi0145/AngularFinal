@@ -1,0 +1,35 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Please Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()" ng-if="isAuthenicated()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+
+      <div class="list">
+        <form class="item" ng-submit="LoginOffline()">
+            <label name='loginForm' class="item item-input">
+                <span class="input-label">Username</span>
+                <input type="text" ng-model="username">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" ng-value="balls" ng-model='password'>
+            </label>
+            <button
+          class="button button-block button-royal"
+          type="submit"
+            ng-click="logInOffline(username, password)">Log in</button>
+        </form>
+          <div class='item text-center'>or</div>
+        <label class="item">
+          <button
+          class="button button-block button-positive"
+          ng-click="authenticate('facebook')"
+          type="submit">Log in with Facebook
+          </button>
+        </label>
+ </div>
+  </ion-content>
+</ion-modal-view>

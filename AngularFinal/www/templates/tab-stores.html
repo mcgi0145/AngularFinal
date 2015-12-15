@@ -1,0 +1,23 @@
+<ion-view view-title="Stores">
+  <ion-content class="padding">
+    <div class="bar bar-header item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon icon-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="Search a City.." ng-model="data.city" value={{data.city}}>
+        </label>
+        <button class="button button-balanced" ng-click="getStores(data.city)">
+        Go
+        </button>
+    </div>
+<!--  ion-slide wasn't behaving so i used list    -->
+      <ion-list>
+          <ion-item class="item"
+                    ng-repeat="store in stores track by $index">
+                <h2>{{store.longName}}</h2>
+                <p>City: {{store.city}}</p>  
+                <p>Phone Number: {{store.phone}}</p>
+                <p>Hours: {{store.hours}}</p>
+            </ion-item>
+        </ion-list>
+  </ion-content>
+</ion-view>
